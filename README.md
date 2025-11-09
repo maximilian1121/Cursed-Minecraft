@@ -12,3 +12,7 @@ Adding more soon!
 - Tnt wand
 ## Contributions
 Please contribute a curse to this mod if you really so wish to see the codebase!
+## Gallery
+Fast Lava Mod:
+
+![fastLavaPreviewCompressed](fastLavaPreview.gif)
