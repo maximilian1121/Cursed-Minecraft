@@ -29,7 +29,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.waterFast"))
                                         .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.waterFast.description"))
-                                                .webpImage(imageSample("fast_lava_preview.webp"))
+//                                                .webpImage(imageSample("fast_lava_preview.webp"))
                                                 .build()
                                         )
                                         .binding(config.waterFast,
@@ -41,7 +41,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.waterInfinite"))
                                         .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.waterInfinite.description"))
-                                                .webpImage(imageSample("fast_lava_preview.webp"))
+//                                                .webpImage(imageSample("fast_lava_preview.webp"))
                                                 .build()
                                         )
                                         .binding(config.waterInfinite,
