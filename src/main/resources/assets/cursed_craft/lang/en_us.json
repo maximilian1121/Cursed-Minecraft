@@ -23,5 +23,7 @@
   "item.cursed_craft.tnt_wand": "TNT Wand",
   "cursed_craft.config.category.mobs": "Mobs",
   "cursed_craft.config.option.rapidSkeletons": "Rapid Skeletons",
-  "cursed_craft.config.option.rapidSkeletons.description": "If enabled skeletons will rapid fire."
+  "cursed_craft.config.option.rapidSkeletons.description": "If enabled skeletons will rapid fire.",
+  "cursed_craft.config.option.instantCreeper": "Instant Creeper Fuse",
+  "cursed_craft.config.option.instantCreeper.description": "Makes creepers explode instantly"
 }

@@ -32,4 +32,6 @@ public class Config {
 
     @SerialEntry
     public boolean rapidSkeletons = false;
+    @SerialEntry
+    public boolean instantCreepers = false;
 }

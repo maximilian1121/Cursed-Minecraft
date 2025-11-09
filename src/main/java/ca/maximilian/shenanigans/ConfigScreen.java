@@ -28,9 +28,9 @@ public class ConfigScreen {
                                 .option(Option.createBuilder(boolean.class)
                                         .name(Component.translatable("cursed_craft.config.option.waterFast"))
                                         .description(OptionDescription.createBuilder()
-                                                .text(Component.translatable("cursed_craft.config.option.waterFast.description"))
+                                                        .text(Component.translatable("cursed_craft.config.option.waterFast.description"))
 //                                                .webpImage(imageSample("fast_lava_preview.webp"))
-                                                .build()
+                                                        .build()
                                         )
                                         .binding(config.waterFast,
                                                 () -> config.waterFast,
@@ -40,9 +40,9 @@ public class ConfigScreen {
                                 .option(Option.createBuilder(boolean.class)
                                         .name(Component.translatable("cursed_craft.config.option.waterInfinite"))
                                         .description(OptionDescription.createBuilder()
-                                                .text(Component.translatable("cursed_craft.config.option.waterInfinite.description"))
+                                                        .text(Component.translatable("cursed_craft.config.option.waterInfinite.description"))
 //                                                .webpImage(imageSample("fast_lava_preview.webp"))
-                                                .build()
+                                                        .build()
                                         )
                                         .binding(config.waterInfinite,
                                                 () -> config.waterInfinite,
@@ -106,6 +106,18 @@ public class ConfigScreen {
                                 .binding(config.rapidSkeletons,
                                         () -> config.rapidSkeletons,
                                         val -> config.rapidSkeletons = val)
+                                .controller(TickBoxControllerBuilder::create)
+                                .build())
+                        .option(Option.createBuilder(boolean.class)
+                                .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
+                                .description(OptionDescription.createBuilder()
+                                        .text(Component.translatable("cursed_craft.config.option.instantCreeper.description"))
+                                        .webpImage(imageSample("instant_creeper_demo.webp"))
+                                        .build()
+                                )
+                                .binding(config.instantCreepers,
+                                        () -> config.instantCreepers,
+                                        val -> config.instantCreepers = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         .build())
