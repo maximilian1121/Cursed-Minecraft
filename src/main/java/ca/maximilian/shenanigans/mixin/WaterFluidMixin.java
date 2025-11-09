@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class WaterFluidMixin {
     /**
      * @author me
-     * @reason yes
+     * @reason make water flow infinitely
      */
     @Overwrite
     public boolean isSource(FluidState fluidState) {

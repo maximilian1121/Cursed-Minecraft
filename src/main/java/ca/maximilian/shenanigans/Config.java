@@ -26,4 +26,10 @@ public class Config {
     public boolean lavaFast = false;
     @SerialEntry
     public boolean lavaInfinite = false;
+
+    @SerialEntry
+    public boolean infinitePiston = false;
+
+    @SerialEntry
+    public boolean rapidSkeletons = false;
 }

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class LavaInfinite {
     /**
      * @author me
-     * @reason yes
+     * @reason make lava flow infinitely
      */
     @Overwrite
     public boolean isSource(FluidState fluidState) {

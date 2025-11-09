@@ -14,5 +14,14 @@
   "cursed_craft.config.option.lavaFast": "Fast Lava",
   "cursed_craft.config.option.lavaFast.description": "Makes lava flow much faster.",
   "cursed_craft.config.option.lavaInfinite": "Infinite Lava",
-  "cursed_craft.config.option.lavaInfinite.description": "Allows lava to become infinite."
+  "cursed_craft.config.option.lavaInfinite.description": "Allows lava to become infinite.",
+
+  "cursed_craft.config.category.tech": "Technology",
+  "cursed_craft.config.option.pistonInfinite": "Infinite Piston",
+  "cursed_craft.config.option.pistonInfinite.description": "Makes pistons literally push infinite blocks, technically. Its more +2,147,483,647 because that's the highest number for a 32bit signed integer.",
+
+  "item.cursed_craft.tnt_wand": "TNT Wand",
+  "cursed_craft.config.category.mobs": "Mobs",
+  "cursed_craft.config.option.rapidSkeletons": "Rapid Skeletons",
+  "cursed_craft.config.option.rapidSkeletons.description": "If enabled skeletons will rapid fire."
 }

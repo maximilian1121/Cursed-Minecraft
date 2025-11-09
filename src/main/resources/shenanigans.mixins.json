@@ -4,8 +4,10 @@
   "package": "ca.maximilian.shenanigans.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "InfPiston",
     "LavaFast",
     "LavaInfinite",
+    "SkeletonRapidFire",
     "WaterFast",
     "WaterFluidMixin"
   ],

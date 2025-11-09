@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class WaterFast {
     /**
      * @author max
-     * @reason cuz why not!
+     * @reason make water flow faster by reducing the tick delay
      */
     @Overwrite
     public int getTickDelay(LevelReader levelReader) {

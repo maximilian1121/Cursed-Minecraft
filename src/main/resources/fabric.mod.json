@@ -15,6 +15,9 @@
     ],
     "modmenu": [
       "ca.maximilian.shenanigans.ModMenuIntegration"
+    ],
+    "fabric-datagen": [
+      "ca.maximilian.shenanigans.datagen.DatagenEntry"
     ]
   },
   "mixins": [

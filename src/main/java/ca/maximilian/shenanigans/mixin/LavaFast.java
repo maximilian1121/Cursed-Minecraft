@@ -15,7 +15,7 @@ import static net.minecraft.world.level.material.FlowingFluid.FALLING;
 public class LavaFast {
     /**
      * @author max
-     * @reason cuz why not!
+     * @reason lessen the tick delay.
      */
     @Overwrite
     public int getTickDelay(LevelReader level) {
@@ -28,7 +28,7 @@ public class LavaFast {
 
     /**
      * @author max
-     * @reason cuz why not!
+     * @reason lessen the spread delay.
      */
     @Overwrite
     public int getSpreadDelay(Level level, BlockPos pos, FluidState currentState, FluidState newState) {
