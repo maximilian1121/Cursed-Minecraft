@@ -1,0 +1,16 @@
+﻿{
+  "cursed_craft.config.title": "Cursed Craft",
+  "cursed_craft.config.category.fluids": "Fluids",
+
+  "cursed_craft.config.group.water": "Water",
+  "cursed_craft.config.option.waterFast": "Fast Water",
+  "cursed_craft.config.option.waterFast.tooltip": "Makes water flow much faster.",
+  "cursed_craft.config.option.waterInfinite": "Infinite Water",
+  "cursed_craft.config.option.waterInfinite.tooltip": "Allows water to become infinite.",
+
+  "cursed_craft.config.group.lava": "Lava",
+  "cursed_craft.config.option.lavaFast": "Fast Lava",
+  "cursed_craft.config.option.lavaFast.tooltip": "Fast Lava",
+  "cursed_craft.config.option.lavaInfinite": "Infinite Lava",
+  "cursed_craft.config.option.lavaInfinite.tooltip": "Fast Lava"
+}
