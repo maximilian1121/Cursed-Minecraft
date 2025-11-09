@@ -28,8 +28,16 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
 
-      - name: Upload build artifact
+      - name: Upload built mod
         uses: actions/upload-artifact@v4
         with:
           name: devbuild-${{ github.sha }}
-          path: build/libs/*.jar
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
+
+      - name: Upload built sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: devbuild-sources-${{ github.sha }}
+          path: build/libs/*-sources.jar
