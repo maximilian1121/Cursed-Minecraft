@@ -25,6 +25,12 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
+      - name: Shorten commit SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Update mod_version
+        run: sed -i "s/^mod_version=.*/mod_version=${SHORT_SHA}/" gradle.properties
+
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
 
