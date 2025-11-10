@@ -11,8 +11,11 @@
     "LavaInfinite",
     "SkeletonRapidFire",
     "WaterFast",
-    "WaterFluidMixin"
+    "WaterFluidMixin",
+    "CrashOnDeath"
   ],
+  "client": [],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
   },

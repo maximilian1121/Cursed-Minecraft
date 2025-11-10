@@ -93,6 +93,18 @@ public class ConfigScreen {
                                         val -> config.infinitePiston = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+                        .option(Option.createBuilder(boolean.class)
+                                .name(Component.translatable("cursed_craft.config.option.crashOnDeath"))
+                                .description(OptionDescription.createBuilder()
+                                                .text(Component.translatable("cursed_craft.config.option.crashOnDeath.description"))
+//                                        .webpImage(imageSample("inf_lava_preview.webp"))
+                                                .build()
+                                )
+                                .binding(config.crashOnDeath,
+                                        () -> config.crashOnDeath,
+                                        val -> config.crashOnDeath = val)
+                                .controller(TickBoxControllerBuilder::create)
+                                .build())
                         .build())
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("cursed_craft.config.category.mobs"))

@@ -29,6 +29,8 @@ public class Config {
 
     @SerialEntry
     public boolean infinitePiston = false;
+    @SerialEntry
+    public boolean crashOnDeath = false;
 
     @SerialEntry
     public boolean rapidSkeletons = false;
