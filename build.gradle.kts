@@ -45,7 +45,6 @@ dependencies {
      * Fetches only the required Fabric API modules to not waste time downloading all of them for each version.
      * @see <a href="https://github.com/FabricMC/fabric">List of Fabric API modules</a>
      */
-    println(property("deps.fabric_api"))
     fun fapi(vararg modules: String) {
         for (it in modules) modImplementation(fabricApi.module(it, property("deps.fabric_api") as String))
     }
@@ -77,16 +76,11 @@ loom {
     fabricModJsonPath = rootProject.file("src/main/resources/fabric.mod.json") // Useful for interface injection
     accessWidenerPath = rootProject.file("src/main/resources/cursed_craft.accesswidener")
 
-    runs {
-        create("datagen") {
-            client()
-            ideConfigGenerated(true)
-            name("Data Generation")
-            vmArgs(
-                "-Dfabric-api.datagen",
-                "-Dfabric-api.datagen.output-dir=${project.rootDir}/src/main/generated"
-            )
-            runDir = "build/datagen"
+    fabricApi {
+        configureDataGeneration {
+            createRunConfiguration = true
+            client = true
+            modId = property("mod.id") as String
         }
     }
 
