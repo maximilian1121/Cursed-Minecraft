@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Adds tons of cursed things to minecraft",
+  "authors": [
+    "Max"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/cursed_craft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ca.maximilian.cursed_craft.CursedCraft"
+    ],
+    "modmenu": [
+      "ca.maximilian.cursed_craft.ModMenuIntegration"
+    ],
+    "fabric-datagen": [
+      "ca.maximilian.cursed_craft.datagen.DatagenEntry"
+    ]
+  },
+  "mixins": [
+    "cursed_craft.mixins.json"
+  ],
+  "accessWidener": "cursed_craft.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.17",
+    "minecraft": "${minecraft}"
+  }
+}
