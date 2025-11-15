@@ -1,46 +1,40 @@
-# Gradle
-.gradle
-/build/
-/out/
+# gradle
 
-# Local configuration file (may contain sensitive information)
-# This file is used to specify versions and other local properties
-gradle.properties.local
+.gradle/
+build/
+out/
+classes/
 
-# IDE files
-# IntelliJ
+# eclipse
+
+*.launch
+
+# idea
+
 .idea/
-*.iws
 *.iml
 *.ipr
+*.iws
 
-# Eclipse
+# vscode
+
+.settings/
+.vscode/
+bin/
 .classpath
 .project
-.settings/
-bin/
-tmp/
-apt_generated/
-.factorypath
 
-# VS Code
-.vscode/
+# macos
 
-# mcup (used by some templates for local runs)
-.mcup/
+*.DS_Store
 
-# Windows
-Thumbs.db
-ehthumbs.db
-*.stackdump
+# fabric
 
-# Mac
-.DS_Store
+run/
 
-# Logs
-*.log
-logs/
+# java
 
-# Optional: Compiled mod jar files (usually go in the /build/libs folder, which is already ignored by /build/)
-# If you want to be extra sure:
-*.jar
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
