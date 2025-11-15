@@ -1,5 +1,46 @@
-build
+# Gradle
 .gradle
-run
-.idea
-*.cache
+/build/
+/out/
+
+# Local configuration file (may contain sensitive information)
+# This file is used to specify versions and other local properties
+gradle.properties.local
+
+# IDE files
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+tmp/
+apt_generated/
+.factorypath
+
+# VS Code
+.vscode/
+
+# mcup (used by some templates for local runs)
+.mcup/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.stackdump
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Optional: Compiled mod jar files (usually go in the /build/libs folder, which is already ignored by /build/)
+# If you want to be extra sure:
+*.jar
