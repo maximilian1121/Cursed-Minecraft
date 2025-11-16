@@ -108,6 +108,7 @@ public class ConfigScreen {
                         .build())
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("cursed_craft.config.category.mobs"))
+                        //? >=1.21 {
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.rapidSkeletons"))
                                 .description(OptionDescription.createBuilder()
@@ -120,6 +121,7 @@ public class ConfigScreen {
                                         val -> config.rapidSkeletons = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+                        //?}
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
                                 .description(OptionDescription.createBuilder()

@@ -31,8 +31,11 @@ public class Config {
     @SerialEntry
     public boolean crashOnDeath = false;
 
+    //? >=1.21 {
     @SerialEntry
     public boolean rapidSkeletons = false;
+    //?}
+
     @SerialEntry
     public boolean instantCreepers = false;
 }

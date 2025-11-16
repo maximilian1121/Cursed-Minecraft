@@ -35,9 +35,9 @@ public class TNTWand extends Item {
 
         ItemStack itemStack = player.getItemInHand(usedHand);
         //? if <1.21 {
-        itemStack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(usedHand));
-        //?} else
-        /*itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);*/
+        /*itemStack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(usedHand));
+        *///?} else
+        itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }

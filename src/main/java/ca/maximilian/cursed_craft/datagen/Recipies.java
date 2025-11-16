@@ -8,11 +8,11 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 
-import java.util.function.Consumer;
-
 //? if <1.21 {
 
-import net.minecraft.data.recipes.FinishedRecipe;
+/*import net.minecraft.data.recipes.FinishedRecipe;
+
+import java.util.function.Consumer;
 public class Recipies extends FabricRecipeProvider {
     public Recipies(FabricDataOutput output) {
         super(output);
@@ -32,10 +32,10 @@ public class Recipies extends FabricRecipeProvider {
                 .save(exporter);
     }
 }
-//?} else {
+*///?} else {
 
 
-/*import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeOutput;
 
@@ -59,4 +59,3 @@ public class Recipies extends FabricRecipeProvider {
                 .save(exporter);
     }
 }
-*/

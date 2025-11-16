@@ -1,8 +1,20 @@
 {
   "required": true,
-  "package": "com.example.mixin",
+  "package": "ca.maximilian.cursed_craft.mixin",
   "compatibilityLevel": "${java}",
-  "mixins": [],
+  "mixins": [
+
+    "CreeperAccessor",
+    "CreeperBlowUpFast",
+    "InfPiston",
+    "LavaFast",
+    "LavaInfinite",
+    "SkeletonRapidFire",
+    "WaterFast",
+    "WaterFluidMixin",
+    "CrashOnDeath"
+
+  ],
   "injectors": {
     "defaultRequire": 1
   }

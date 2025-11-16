@@ -20,8 +20,8 @@ public class CursedCraft implements ModInitializer {
      */
     public static ResourceLocation id(String namespace, String path) {
         //? if <1.21 {
-        return new ResourceLocation(namespace, path);
-         //?} else
-        /*return ResourceLocation.fromNamespaceAndPath(namespace, path);*/
+        /*return new ResourceLocation(namespace, path);
+         *///?} else
+        return ResourceLocation.fromNamespaceAndPath(namespace, path);
     }
 }
