@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 
 
 
-//? >=1.20.2 {
+//? >=1.20.4 {
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -27,16 +27,16 @@ import java.util.function.Consumer;
 
 public class Recipes extends FabricRecipeProvider {
     //? >=1.21 {
-    public Recipes(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    /*public Recipes(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
-    //?} else if <=1.20.2 {
-    /*Recipes(FabricDataOutput generator) {
+    *///?} else if <=1.20.4 {
+    Recipes(FabricDataOutput generator) {
         super(generator);
     }
-    *///?}
+    //?}
 
-    //? >= 1.20.2 {
+    //? >= 1.20.4 {
     public void buildTNTWandRecipe(ShapedRecipeBuilder builder, RecipeOutput consumer) {
     //?} else if <=1.20.1 {
     /*public void buildTNTWandRecipe(ShapedRecipeBuilder builder, Consumer<FinishedRecipe> consumer) {
@@ -54,7 +54,7 @@ public class Recipes extends FabricRecipeProvider {
     }
 
     //? if >=1.21.9 {
-    @Override
+    /*@Override
     public String getName() {
         return "CursedCraftRecipes";
     }
@@ -67,12 +67,12 @@ public class Recipes extends FabricRecipeProvider {
             }
         };
     }
-    //?} else if >= 1.20.2 {
-    /*@Override
+    *///?} else if >= 1.20.4 {
+    @Override
     public void buildRecipes(RecipeOutput recipeExporter) {
         buildTNTWandRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.TNT_WAND, 1), recipeExporter);
     }
-    *///?} else <= 1.20.1 {
+    //?} else <= 1.20.1 {
     /*@Override
     public void buildRecipes(Consumer<FinishedRecipe> consumer) {
         buildTNTWandRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.TNT_WAND, 1), consumer);

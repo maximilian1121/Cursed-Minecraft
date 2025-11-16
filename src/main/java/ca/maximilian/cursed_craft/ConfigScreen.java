@@ -3,7 +3,10 @@ package ca.maximilian.cursed_craft;
 import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import dev.isxander.yacl3.gui.controllers.cycling.EnumController;
-import dev.isxander.yacl3.platform.YACLPlatform;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +24,15 @@ public class ConfigScreen {
                 .title(Component.translatable("cursed_craft.config.title"))
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("cursed_craft.config.category.fluids"))
+                        .option(
+                                LabelOption.createBuilder()
+                                        .line(Minecraft.getInstance().getCurrentServer() != null
+                                                ? Component.translatable("cursed_craft.config.label.serverConfigDisabled")
+                                                .withStyle(ChatFormatting.YELLOW)
+                                                : Component.translatable("cursed_craft.config.label.notInServer")
+                                                .withStyle(ChatFormatting.GREEN))
+                                        .build()
+                        )
                         .group(OptionGroup.createBuilder()
                                 .name(Component.translatable("cursed_craft.config.group.water"))
                                 .description(OptionDescription.createBuilder()
@@ -82,6 +94,15 @@ public class ConfigScreen {
                         .build())
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("cursed_craft.config.category.tech"))
+                        .option(
+                                LabelOption.createBuilder()
+                                        .line(Minecraft.getInstance().getCurrentServer() != null
+                                                ? Component.translatable("cursed_craft.config.label.serverConfigDisabled")
+                                                .withStyle(ChatFormatting.YELLOW)
+                                                : Component.translatable("cursed_craft.config.label.notInServer")
+                                                .withStyle(ChatFormatting.GREEN))
+                                        .build()
+                        )
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.pistonInfinite"))
                                 .description(OptionDescription.createBuilder()
@@ -109,8 +130,17 @@ public class ConfigScreen {
                         .build())
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("cursed_craft.config.category.mobs"))
+                        .option(
+                                LabelOption.createBuilder()
+                                        .line(Minecraft.getInstance().getCurrentServer() != null
+                                                ? Component.translatable("cursed_craft.config.label.serverConfigDisabled")
+                                                .withStyle(ChatFormatting.YELLOW)
+                                                : Component.translatable("cursed_craft.config.label.notInServer")
+                                                .withStyle(ChatFormatting.GREEN))
+                                        .build()
+                        )
                         //? >=1.21 {
-                        .option(Option.createBuilder(boolean.class)
+                        /*.option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.rapidSkeletons"))
                                 .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.rapidSkeletons.description"))
@@ -122,9 +152,9 @@ public class ConfigScreen {
                                         val -> config.rapidSkeletons = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
-                        //?} else {
-                                /*.option(LabelOption.create(Component.translatable("cursed_craft.config.label.skeletonDisabled")))
-                        *///?}
+                        *///?} else {
+                                .option(LabelOption.create(Component.literal(Component.translatable("cursed_craft.config.label.skeletonDisabled").getString().replace("${minecraft}", CursedCraft.MINECRAFT))))
+                        //?}
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
                                 .description(OptionDescription.createBuilder()

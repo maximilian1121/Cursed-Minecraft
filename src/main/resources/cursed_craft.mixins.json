@@ -2,8 +2,10 @@
   "required": true,
   "package": "ca.maximilian.cursed_craft.mixin",
   "compatibilityLevel": "${java}",
+  "client": [
+    "CrashOnDeath"
+  ],
   "mixins": [
-
     "CreeperAccessor",
     "CreeperBlowUpFast",
     "InfPiston",
@@ -12,9 +14,7 @@
     "SkeletonRapidFire",
     "WaterFast",
     "WaterFluidMixin",
-    "CrashOnDeath",
     "ZombieOneTap"
-
   ],
   "injectors": {
     "defaultRequire": 1

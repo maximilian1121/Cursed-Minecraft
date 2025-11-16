@@ -41,29 +41,14 @@ repositories {
 }
 
 dependencies {
-    /**
-     * Fetches only the required Fabric API modules to not waste time downloading all of them for each version.
-     * @see <a href="https://github.com/FabricMC/fabric">List of Fabric API modules</a>
-     */
-    fun fapi(vararg modules: String) {
-        for (it in modules) modImplementation(fabricApi.module(it, property("deps.fabric_api") as String))
-    }
-
     minecraft("com.mojang:minecraft:${stonecutter.current.version}")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
 
-    // Fabric API modules
-    fapi(
-        "fabric-lifecycle-events-v1",
-        "fabric-resource-loader-v0",
-        "fabric-content-registries-v0",
-        "fabric-item-group-api-v1",
-        "fabric-data-generation-api-v1"
-    )
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
 
     modImplementation("com.terraformersmc:modmenu:${property("deps.modmenu_version")}")
-    modImplementation("maven.modrinth:yacl:${property("deps.yacl_version")}")
+    modImplementation("dev.isxander:yet-another-config-lib:${property("deps.yacl_version")}")
 }
 
 sourceSets {

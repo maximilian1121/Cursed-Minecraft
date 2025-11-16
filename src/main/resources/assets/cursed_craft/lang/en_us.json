@@ -29,5 +29,7 @@
   "cursed_craft.config.option.oneTapZombies.description": "Makes all zombies deal ~10,000 damage to everything, be careful!",
   "cursed_craft.config.enum.cond_type.off": "OFF",
   "cursed_craft.config.enum.cond_type.memset": "Instant",
-  "cursed_craft.config.enum.cond_type.stoppedresponding": "Stopped responding"
+  "cursed_craft.config.enum.cond_type.stoppedresponding": "Stopped responding",
+  "cursed_craft.config.label.serverConfigDisabled": "Since you are playing on a server none of these configs will be applied, the server manages all of this.",
+  "cursed_craft.config.label.notInServer": "Since you are not on a Multiplayer server you can change these and it will effect singleplayer gameplay!"
 }

@@ -6,13 +6,13 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 //? >=1.21 {
-@Mixin(AbstractSkeleton.class)
+/*@Mixin(AbstractSkeleton.class)
 public class SkeletonRapidFire {
 
-    /**
+    /^*
      * @author max
      * @reason To set hard attack intervals for AbstractSkeletons
-     */
+     ^/
     @Overwrite
     public int getHardAttackInterval() {
         if (Config.HANDLER.instance().rapidSkeletons) {
@@ -21,10 +21,10 @@ public class SkeletonRapidFire {
         return 20;
     }
 
-    /**
+    /^*
      * @author max
      * @reason To set attack intervals for AbstractSkeletons
-     */
+     ^/
     @Overwrite
     public int getAttackInterval() {
         if (Config.HANDLER.instance().rapidSkeletons) {
@@ -33,12 +33,12 @@ public class SkeletonRapidFire {
         return 40;
     }
 }
-//?} else {
+*///?} else {
 
-/*import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.ObjectUtils;
 @Mixin(ObjectUtils.Null.class)
 public class SkeletonRapidFire {
 
 }
 
-*///?}
+//?}

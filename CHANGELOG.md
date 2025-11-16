@@ -1,8 +1,6 @@
 # New features
 
- - Added a new selector for what kind of crash on death you want.
- - Added instant zombie kills.
-
-# Fixes
-
- - Made config defaults to actually be what they are as default.
+ - Better server side support. **NO CONFIG SYNC**
+ - New 1.20.4 support.
+ - Added comments to config.
+ - Client config screen warns you about how editing it on the client does not affect the server you are playing on.

@@ -8,7 +8,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
 //? >=1.21.9 {
-import net.minecraft.core.registries.Registries;
+/*import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 
 import java.util.function.Function;
@@ -35,8 +35,8 @@ public class ModItem {
         return item;
     }
 }
-//?} else {
-/*public class ModItem {
+*///?} else {
+public class ModItem {
     public static Item TNT_WAND = new TNTWand(new Item.Properties().durability(10));
 
     public static void init() {
@@ -49,4 +49,4 @@ public class ModItem {
         CursedCraft.LOGGER.info("Done registering items!");
     }
 }
-*///?}
+//?}
