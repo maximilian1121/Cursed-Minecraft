@@ -22,6 +22,12 @@
   "cursed_craft.config.option.rapidSkeletons.description": "If enabled skeletons will rapid fire.",
   "cursed_craft.config.option.instantCreeper": "Instant Creeper Fuse",
   "cursed_craft.config.option.instantCreeper.description": "Makes creepers explode instantly",
-  "cursed_craft.config.option.crashOnDeath": "Crash on death (CRASHES SERVER IF ON SERVER!)",
-  "cursed_craft.config.option.crashOnDeath.description": "Causes the game to crash once you die."
+  "cursed_craft.config.option.crashOnDeath": "Crash on death",
+  "cursed_craft.config.option.crashOnDeath.description": "Causes the game to crash once you die.",
+  "cursed_craft.config.label.skeletonDisabled": "The skeleton rapid-fire feature is disabled because you’re on 1.20.1. You need to be on 1.21.1 or higher to use it.",
+  "cursed_craft.config.option.oneTapZombies": "OP Zombies",
+  "cursed_craft.config.option.oneTapZombies.description": "Makes all zombies deal ~10,000 damage to everything, be careful!",
+  "cursed_craft.config.enum.cond_type.off": "OFF",
+  "cursed_craft.config.enum.cond_type.memset": "Instant",
+  "cursed_craft.config.enum.cond_type.stoppedresponding": "Stopped responding"
 }

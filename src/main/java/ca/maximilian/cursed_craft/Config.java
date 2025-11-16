@@ -1,10 +1,12 @@
 package ca.maximilian.cursed_craft;
 
 import com.google.gson.GsonBuilder;
+import dev.isxander.yacl3.api.NameableEnum;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.network.chat.Component;
 
 public class Config {
     public static ConfigClassHandler<Config> HANDLER = ConfigClassHandler.createBuilder(Config.class)
@@ -28,8 +30,9 @@ public class Config {
 
     @SerialEntry
     public boolean infinitePiston = false;
+
     @SerialEntry
-    public boolean crashOnDeath = false;
+    public CrashOnDeathType crashOnDeathType = CrashOnDeathType.OFF;
 
     //? >=1.21 {
     @SerialEntry
@@ -38,4 +41,7 @@ public class Config {
 
     @SerialEntry
     public boolean instantCreepers = false;
+
+    @SerialEntry
+    public boolean oneTapZombies = false;
 }

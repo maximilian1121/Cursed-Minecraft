@@ -12,7 +12,8 @@
     "SkeletonRapidFire",
     "WaterFast",
     "WaterFluidMixin",
-    "CrashOnDeath"
+    "CrashOnDeath",
+    "ZombieOneTap"
 
   ],
   "injectors": {

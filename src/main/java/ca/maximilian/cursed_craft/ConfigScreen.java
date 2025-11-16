@@ -1,7 +1,9 @@
 package ca.maximilian.cursed_craft;
 
 import dev.isxander.yacl3.api.*;
+import dev.isxander.yacl3.api.controller.EnumControllerBuilder;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
+import dev.isxander.yacl3.gui.controllers.cycling.EnumController;
 import dev.isxander.yacl3.platform.YACLPlatform;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -32,7 +34,7 @@ public class ConfigScreen {
 //                                                .webpImage(imageSample("fast_lava_preview.webp"))
                                                         .build()
                                         )
-                                        .binding(config.waterFast,
+                                        .binding(false,
                                                 () -> config.waterFast,
                                                 val -> config.waterFast = val)
                                         .controller(TickBoxControllerBuilder::create)
@@ -44,7 +46,7 @@ public class ConfigScreen {
 //                                                .webpImage(imageSample("fast_lava_preview.webp"))
                                                         .build()
                                         )
-                                        .binding(config.waterInfinite,
+                                        .binding(false,
                                                 () -> config.waterInfinite,
                                                 val -> config.waterInfinite = val)
                                         .controller(TickBoxControllerBuilder::create)
@@ -61,7 +63,7 @@ public class ConfigScreen {
                                                 .webpImage(imageSample("fast_lava_preview.webp"))
                                                 .build()
                                         )
-                                        .binding(config.lavaFast,
+                                        .binding(false,
                                                 () -> config.lavaFast,
                                                 val -> config.lavaFast = val)
                                         .controller(TickBoxControllerBuilder::create)
@@ -73,7 +75,7 @@ public class ConfigScreen {
                                                 .webpImage(imageSample("inf_lava_preview.webp"))
                                                 .build()
                                         )
-                                        .binding(config.lavaInfinite,
+                                        .binding(false,
                                                 () -> config.lavaInfinite,
                                                 val -> config.lavaInfinite = val)
                                         .controller(TickBoxControllerBuilder::create)
@@ -88,22 +90,22 @@ public class ConfigScreen {
 //                                        .webpImage(imageSample("inf_lava_preview.webp"))
                                                 .build()
                                 )
-                                .binding(config.infinitePiston,
+                                .binding(false,
                                         () -> config.infinitePiston,
                                         val -> config.infinitePiston = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
-                        .option(Option.createBuilder(boolean.class)
+                        .option(Option.<CrashOnDeathType>createBuilder()
                                 .name(Component.translatable("cursed_craft.config.option.crashOnDeath"))
                                 .description(OptionDescription.createBuilder()
-                                                .text(Component.translatable("cursed_craft.config.option.crashOnDeath.description"))
-//                                        .webpImage(imageSample("inf_lava_preview.webp"))
-                                                .build()
+                                        .text(Component.translatable("cursed_craft.config.option.crashOnDeath.description"))
+                                        .build())
+                                .binding(
+                                        CrashOnDeathType.OFF,
+                                        () -> config.crashOnDeathType,
+                                        (value) -> config.crashOnDeathType = value
                                 )
-                                .binding(config.crashOnDeath,
-                                        () -> config.crashOnDeath,
-                                        val -> config.crashOnDeath = val)
-                                .controller(TickBoxControllerBuilder::create)
+                                .customController(opt -> new EnumController<>(opt, CrashOnDeathType.class))
                                 .build())
                         .build())
                 .category(ConfigCategory.createBuilder()
@@ -116,11 +118,13 @@ public class ConfigScreen {
 //                                        .webpImage(imageSample("inf_lava_preview.webp"))
                                                 .build()
                                 )
-                                .binding(config.rapidSkeletons,
+                                .binding(false,
                                         () -> config.rapidSkeletons,
                                         val -> config.rapidSkeletons = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+                        //?} else {
+                                .option(LabelOption.create(Component.translatable("cursed_craft.config.label.skeletonDisabled")))
                         //?}
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
@@ -129,7 +133,19 @@ public class ConfigScreen {
                                         .webpImage(imageSample("instant_creeper_demo.webp"))
                                         .build()
                                 )
-                                .binding(config.instantCreepers,
+                                .binding(false,
+                                        () -> config.instantCreepers,
+                                        val -> config.instantCreepers = val)
+                                .controller(TickBoxControllerBuilder::create)
+                                .build())
+                        .option(Option.createBuilder(boolean.class)
+                                .name(Component.translatable("cursed_craft.config.option.oneTapZombies"))
+                                .description(OptionDescription.createBuilder()
+                                        .text(Component.translatable("cursed_craft.config.option.oneTapZombies.description"))
+//                                        .webpImage(imageSample("instant_creeper_demo.webp"))
+                                        .build()
+                                )
+                                .binding(false,
                                         () -> config.instantCreepers,
                                         val -> config.instantCreepers = val)
                                 .controller(TickBoxControllerBuilder::create)
