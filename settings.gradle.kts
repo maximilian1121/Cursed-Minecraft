@@ -5,6 +5,7 @@ pluginManagement {
         gradlePluginPortal()
         maven("https://maven.fabricmc.net/")
         maven("https://maven.kikugie.dev/snapshots") { name = "KikuGie Snapshots" }
+        maven("https://maven.modmuss50.me/")
     }
 }
 
