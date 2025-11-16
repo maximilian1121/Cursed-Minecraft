@@ -61,7 +61,20 @@ public class ConfigScreen {
                                                 () -> config.waterInfinite,
                                                 val -> config.waterInfinite = val)
                                         .controller(TickBoxControllerBuilder::create)
-                                        .build()).build())
+                                        .build())
+                                .option(Option.createBuilder(boolean.class)
+                                        .name(Component.translatable("cursed_craft.config.option.waterNether"))
+                                        .description(OptionDescription.createBuilder()
+                                                        .text(Component.translatable("cursed_craft.config.option.waterNether.description"))
+//                                                .webpImage(imageSample("fast_lava_preview.webp"))
+                                                        .build()
+                                        )
+                                        .binding(false,
+                                                () -> config.waterInfinite,
+                                                val -> config.waterInfinite = val)
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build())
+                                .build())
                         .group(OptionGroup.createBuilder()
                                 .name(Component.translatable("cursed_craft.config.group.lava"))
                                 .description(OptionDescription.createBuilder()
@@ -140,7 +153,7 @@ public class ConfigScreen {
                                         .build()
                         )
                         //? >=1.21 {
-                        /*.option(Option.createBuilder(boolean.class)
+                        .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.rapidSkeletons"))
                                 .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.rapidSkeletons.description"))
@@ -152,9 +165,9 @@ public class ConfigScreen {
                                         val -> config.rapidSkeletons = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
-                        *///?} else {
-                                .option(LabelOption.create(Component.literal(Component.translatable("cursed_craft.config.label.skeletonDisabled").getString().replace("${minecraft}", CursedCraft.MINECRAFT))))
-                        //?}
+                        //?} else {
+                                /*.option(LabelOption.create(Component.literal(Component.translatable("cursed_craft.config.label.skeletonDisabled").getString().replace("${minecraft}", CursedCraft.MINECRAFT))))
+                        *///?}
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
                                 .description(OptionDescription.createBuilder()
@@ -175,8 +188,8 @@ public class ConfigScreen {
                                         .build()
                                 )
                                 .binding(false,
-                                        () -> config.instantCreepers,
-                                        val -> config.instantCreepers = val)
+                                        () -> config.oneTapZombies,
+                                        val -> config.oneTapZombies = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         .build())

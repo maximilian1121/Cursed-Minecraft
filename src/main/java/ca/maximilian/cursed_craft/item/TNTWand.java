@@ -45,9 +45,9 @@ public class TNTWand extends Item {
         }
 
         //? if <1.21 {
-        itemStack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(usedHand));
-         //?} else
-        /*itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);*/
+        /*itemStack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(usedHand));
+         *///?} else
+        itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
     }
 
     //? < 1.21.9 {

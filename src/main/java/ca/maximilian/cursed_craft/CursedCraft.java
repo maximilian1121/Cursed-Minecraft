@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class CursedCraft implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("cursed_craft");
     public static final String MOD_ID = "cursed_craft";
-    public static final String MINECRAFT = /*$ minecraft*/ "1.20.4";
+    public static final String MINECRAFT = /*$ minecraft*/ "1.21.1";
 
     @Override
     public void onInitialize() {
@@ -26,8 +26,8 @@ public class CursedCraft implements ModInitializer {
      */
     public static ResourceLocation id(String namespace, String path) {
         //? if <1.21 {
-        return new ResourceLocation(namespace, path);
-         //?} else
-        /*return ResourceLocation.fromNamespaceAndPath(namespace, path);*/
+        /*return new ResourceLocation(namespace, path);
+         *///?} else
+        return ResourceLocation.fromNamespaceAndPath(namespace, path);
     }
 }

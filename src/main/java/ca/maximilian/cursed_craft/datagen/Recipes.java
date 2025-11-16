@@ -27,14 +27,14 @@ import java.util.function.Consumer;
 
 public class Recipes extends FabricRecipeProvider {
     //? >=1.21 {
-    /*public Recipes(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public Recipes(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
-    *///?} else if <=1.20.4 {
-    Recipes(FabricDataOutput generator) {
+    //?} else if <=1.20.4 {
+    /*Recipes(FabricDataOutput generator) {
         super(generator);
     }
-    //?}
+    *///?}
 
     //? >= 1.20.4 {
     public void buildTNTWandRecipe(ShapedRecipeBuilder builder, RecipeOutput consumer) {

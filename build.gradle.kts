@@ -145,10 +145,8 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         minecraftVersions.addAll(property("mod.mc_targets").toString().split(' '))
         requires {
-            id = "P7dR8mSH"
+            slug = "fabric-api"
             slug = "yacl"
-        }
-        optional {
             slug = "modmenu"
         }
     }

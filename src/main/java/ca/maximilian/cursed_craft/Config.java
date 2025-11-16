@@ -25,6 +25,8 @@ public class Config {
     public boolean waterFast = false;
     @SerialEntry
     public boolean waterInfinite = false;
+    @SerialEntry
+    public boolean waterInNether = false;
 
     @SerialEntry
     public boolean lavaFast = false;

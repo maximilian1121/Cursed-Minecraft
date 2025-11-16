@@ -31,5 +31,7 @@
   "cursed_craft.config.enum.cond_type.memset": "Instant",
   "cursed_craft.config.enum.cond_type.stoppedresponding": "Stopped responding",
   "cursed_craft.config.label.serverConfigDisabled": "Since you are playing on a server none of these configs will be applied, the server manages all of this.",
-  "cursed_craft.config.label.notInServer": "Since you are not on a Multiplayer server you can change these and it will effect singleplayer gameplay!"
+  "cursed_craft.config.label.notInServer": "Since you are not on a Multiplayer server you can change these and it will effect singleplayer gameplay!",
+  "cursed_craft.config.option.waterNether": "Water in nether",
+  "cursed_craft.config.option.waterNether.description": "Allows water to be placed in the nether"
 }
