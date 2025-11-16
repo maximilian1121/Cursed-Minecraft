@@ -53,18 +53,18 @@ public class TNTWand extends Item {
     //? < 1.21.9 {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
-        if (level.isClientSide) { return InteractionResultHolder.fail(player.getItemInHand(usedHand)); }
-
-        onUsed(player, level, usedHand);
+        if (!level.isClientSide) {
+            onUsed(player, level, usedHand);
+        }
 
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
     //?} else {
     /*@Override
     public @NotNull InteractionResult use(Level level, Player player, InteractionHand usedHand) {
-        if (level.isClientSide()) { return InteractionResult.FAIL; }
-
-        onUsed(player, level, usedHand);
+        if (!level.isClientSide()) {
+            onUsed(player, level, usedHand);
+         }
 
         return InteractionResult.SUCCESS;
     }
