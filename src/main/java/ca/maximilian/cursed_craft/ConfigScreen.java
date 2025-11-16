@@ -1,7 +1,6 @@
 package ca.maximilian.cursed_craft;
 
 import dev.isxander.yacl3.api.*;
-import dev.isxander.yacl3.api.controller.EnumControllerBuilder;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import dev.isxander.yacl3.gui.controllers.cycling.EnumController;
 import dev.isxander.yacl3.platform.YACLPlatform;
@@ -13,7 +12,7 @@ import static ca.maximilian.cursed_craft.CursedCraft.MOD_ID;
 
 public class ConfigScreen {
     private static ResourceLocation imageSample(String name) {
-        return YACLPlatform.rl(MOD_ID, "textures/images/" + name);
+        return CursedCraft.id(MOD_ID, "textures/images/" + name);
     }
     public static Screen create(Screen parent) {
         Config config = Config.HANDLER.instance();
@@ -124,8 +123,8 @@ public class ConfigScreen {
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         //?} else {
-                                .option(LabelOption.create(Component.translatable("cursed_craft.config.label.skeletonDisabled")))
-                        //?}
+                                /*.option(LabelOption.create(Component.translatable("cursed_craft.config.label.skeletonDisabled")))
+                        *///?}
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
                                 .description(OptionDescription.createBuilder()

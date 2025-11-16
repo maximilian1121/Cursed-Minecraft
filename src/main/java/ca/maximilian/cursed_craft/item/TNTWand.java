@@ -2,10 +2,10 @@ package ca.maximilian.cursed_craft.item;
 
 import net.minecraft.world.InteractionHand;
 //? < 1.21.9 {
-import net.minecraft.world.InteractionResultHolder;
-//?} else {
-/*import net.minecraft.world.InteractionResult;
-*///?}
+/*import net.minecraft.world.InteractionResultHolder;
+*///?} else {
+import net.minecraft.world.InteractionResult;
+//?}
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
@@ -27,10 +27,10 @@ public class TNTWand extends Item {
         Vec3 spawnPos = hitResult.getLocation();
         spawnPos = new Vec3(spawnPos.x, spawnPos.y + 15, spawnPos.z);
         //? < 1.21.9 {
-        PrimedTnt tnt = EntityType.TNT.create(level);
-         //?} else {
-        /*PrimedTnt tnt = EntityType.TNT.create(level, EntitySpawnReason.TRIGGERED);
-        *///?}
+        /*PrimedTnt tnt = EntityType.TNT.create(level);
+         *///?} else {
+        PrimedTnt tnt = EntityType.TNT.create(level, EntitySpawnReason.TRIGGERED);
+        //?}
         ItemStack itemStack = player.getItemInHand(usedHand);
         if (tnt != null) {
             tnt.setPos(spawnPos);
@@ -38,10 +38,10 @@ public class TNTWand extends Item {
         }
         if (!player.isCreative()) {
             //? >=1.21.9 {
-            /*player.getCooldowns().addCooldown(itemStack, 40);
-            *///?} else {
-            player.getCooldowns().addCooldown(this, 40);
-            //?}
+            player.getCooldowns().addCooldown(itemStack, 40);
+            //?} else {
+            /*player.getCooldowns().addCooldown(this, 40);
+            *///?}
         }
 
         //? if <1.21 {
@@ -51,7 +51,7 @@ public class TNTWand extends Item {
     }
 
     //? < 1.21.9 {
-    @Override
+    /*@Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         if (!level.isClientSide) {
             onUsed(player, level, usedHand);
@@ -59,8 +59,8 @@ public class TNTWand extends Item {
 
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
-    //?} else {
-    /*@Override
+    *///?} else {
+    @Override
     public @NotNull InteractionResult use(Level level, Player player, InteractionHand usedHand) {
         if (!level.isClientSide()) {
             onUsed(player, level, usedHand);
@@ -68,5 +68,5 @@ public class TNTWand extends Item {
 
         return InteractionResult.SUCCESS;
     }
-    *///?}
+    //?}
 }

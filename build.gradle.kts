@@ -63,7 +63,7 @@ dependencies {
     )
 
     modImplementation("com.terraformersmc:modmenu:${property("deps.modmenu_version")}")
-    modImplementation("dev.isxander:yet-another-config-lib:${property("deps.yacl_version")}")
+    modImplementation("maven.modrinth:yacl:${property("deps.yacl_version")}")
 }
 
 sourceSets {
@@ -160,7 +160,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         minecraftVersions.addAll(property("mod.mc_targets").toString().split(' '))
         requires {
-            slug = "fabric-api"
+            id = "P7dR8mSH"
             slug = "yacl"
         }
         optional {
