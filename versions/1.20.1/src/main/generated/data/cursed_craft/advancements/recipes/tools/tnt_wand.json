@@ -1,13 +1,25 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "block.minecraft.tnt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:tnt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "cursed_craft:tnt_wand"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "iron_ingot": {
+    "item.minecraft.iron_ingot": {
       "conditions": {
         "items": [
           {
@@ -19,7 +31,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "stick": {
+    "item.minecraft.stick": {
       "conditions": {
         "items": [
           {
@@ -30,25 +42,13 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "tnt": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:tnt"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "stick",
-      "iron_ingot",
-      "tnt",
+      "item.minecraft.stick",
+      "item.minecraft.iron_ingot",
+      "block.minecraft.tnt",
       "has_the_recipe"
     ]
   ],

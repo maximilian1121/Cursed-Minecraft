@@ -98,7 +98,7 @@ loom {
 java {
     withSourcesJar()
     toolchain {
-        languageVersion.set(org.gradle.jvm.toolchain.JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
     targetCompatibility = requiredJava
     sourceCompatibility = requiredJava
@@ -115,7 +115,9 @@ tasks {
             "id" to project.property("mod.id"),
             "name" to project.property("mod.name"),
             "version" to project.property("mod.version"),
-            "minecraft" to project.property("mod.mc_dep")
+            "minecraft" to project.property("mod.mc_dep"),
+            "fabric_api" to project.property("deps.fabric_api"),
+            "yacl_version" to project.property("deps.yacl_version")
         )
 
         filesMatching("fabric.mod.json") { expand(props) }

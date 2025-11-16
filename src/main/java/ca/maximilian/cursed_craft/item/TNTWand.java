@@ -1,7 +1,11 @@
 package ca.maximilian.cursed_craft.item;
 
 import net.minecraft.world.InteractionHand;
+//? < 1.21.9 {
 import net.minecraft.world.InteractionResultHolder;
+//?} else {
+/*import net.minecraft.world.InteractionResult;
+*///?}
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
@@ -17,28 +21,52 @@ public class TNTWand extends Item {
         super(properties);
     }
 
-    @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
-        if (level.isClientSide) { return InteractionResultHolder.fail(player.getItemInHand(usedHand)); }
+    public void onUsed(Player player, Level level, InteractionHand usedHand) {
         HitResult hitResult = player.pick(100.0D, 0.0F, false);
 
         Vec3 spawnPos = hitResult.getLocation();
         spawnPos = new Vec3(spawnPos.x, spawnPos.y + 15, spawnPos.z);
+        //? < 1.21.9 {
         PrimedTnt tnt = EntityType.TNT.create(level);
+         //?} else {
+        /*PrimedTnt tnt = EntityType.TNT.create(level, EntitySpawnReason.TRIGGERED);
+        *///?}
+        ItemStack itemStack = player.getItemInHand(usedHand);
         if (tnt != null) {
             tnt.setPos(spawnPos);
             level.addFreshEntity(tnt);
         }
         if (!player.isCreative()) {
+            //? >=1.21.9 {
+            /*player.getCooldowns().addCooldown(itemStack, 40);
+            *///?} else {
             player.getCooldowns().addCooldown(this, 40);
+            //?}
         }
 
-        ItemStack itemStack = player.getItemInHand(usedHand);
         //? if <1.21 {
         /*itemStack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(usedHand));
-        *///?} else
+         *///?} else
         itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+    }
+
+    //? < 1.21.9 {
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+        if (level.isClientSide) { return InteractionResultHolder.fail(player.getItemInHand(usedHand)); }
+
+        onUsed(player, level, usedHand);
 
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
+    //?} else {
+    /*@Override
+    public @NotNull InteractionResult use(Level level, Player player, InteractionHand usedHand) {
+        if (level.isClientSide()) { return InteractionResult.FAIL; }
+
+        onUsed(player, level, usedHand);
+
+        return InteractionResult.SUCCESS;
+    }
+    *///?}
 }

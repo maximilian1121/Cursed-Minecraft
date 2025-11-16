@@ -7,6 +7,6 @@ public class DatagenEntry implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-        pack.addProvider(Recipies::new);
+        pack.addProvider(Recipes::new);
     }
 }
