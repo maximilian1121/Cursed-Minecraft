@@ -6,7 +6,11 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import org.spongepowered.asm.mixin.Overwrite;
 import ca.maximilian.cursed_craft.Config;
+//? >=1.21.11 {
+/*import net.minecraft.world.entity.monster.skeleton.AbstractSkeleton;
+*///?} else {
 import net.minecraft.world.entity.monster.AbstractSkeleton;
+//?}
 
 @Mixin(AbstractSkeleton.class)
 public class SkeletonRapidFire {

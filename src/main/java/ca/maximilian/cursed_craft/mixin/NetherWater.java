@@ -10,8 +10,10 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(BucketItem.class)
 public abstract class NetherWater {
+    //? <1.21.11 {
     @WrapOperation(method = "emptyContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/dimension/DimensionType;ultraWarm()Z"))
     private boolean overWriteEmptyContents(DimensionType instance, Operation<Boolean> original) {
         return !Config.HANDLER.instance().waterInNether;
     }
+    //?}
 }

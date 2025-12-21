@@ -1,11 +1,15 @@
 package ca.maximilian.cursed_craft.mixin;
 
 import ca.maximilian.cursed_craft.Config;
-import net.minecraft.world.entity.monster.Zombie;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
+//? <1.21.11 {
+import net.minecraft.world.entity.monster.Zombie;
+//?} else {
+/*import net.minecraft.world.entity.monster.zombie.Zombie;
+*///?}
 @Mixin(Zombie.class)
 public class ZombieOneTap {
     @ModifyConstant(method = "createAttributes", constant = @Constant(doubleValue = 3.0))

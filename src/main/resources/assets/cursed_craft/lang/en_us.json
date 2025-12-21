@@ -33,5 +33,7 @@
   "cursed_craft.config.label.serverConfigDisabled": "Since you are playing on a server none of these configs will be applied, the server manages all of this.",
   "cursed_craft.config.label.notInServer": "Since you are not on a Multiplayer server you can change these and it will effect singleplayer gameplay!",
   "cursed_craft.config.option.waterNether": "Water in nether",
-  "cursed_craft.config.option.waterNether.description": "Allows water to be placed in the nether"
+  "cursed_craft.config.option.waterNether.description": "Allows water to be placed in the nether",
+  "cursed_craft.config.label.zombieDisabled": "Starting at minecraft 1.21.11 the OP Zombies feature has been disabled due to minecrafts api changing so much in just one update, atp just make up your mind mojang! No hate...",
+  "cursed_craft.config.label.waternetherDisabled": "Starting at mincraft 1.21.11 the water in the nether is disabled until I can find a fix!"
 }

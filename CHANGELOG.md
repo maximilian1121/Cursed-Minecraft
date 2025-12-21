@@ -1,4 +1,4 @@
 # New features
-
- - Water in the nether.
- - Fixed config mixing up OP Zombies and Instant Creeper Fuse
+ - Fixed config mix-up
+ - Added 1.21.11 proper support
+ - Added nether water config

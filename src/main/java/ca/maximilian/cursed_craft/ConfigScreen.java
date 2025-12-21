@@ -9,12 +9,20 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+//? !1.21.11 {
 import net.minecraft.resources.ResourceLocation;
+//?} else {
+/*import net.minecraft.resources.Identifier;
+*///?}
 
 import static ca.maximilian.cursed_craft.CursedCraft.MOD_ID;
 
 public class ConfigScreen {
+    //? !1.21.11 {
     private static ResourceLocation imageSample(String name) {
+    //?} else {
+    /*private static Identifier imageSample(String name) {
+    *///?}
         return CursedCraft.id(MOD_ID, "textures/images/" + name);
     }
     public static Screen create(Screen parent) {
@@ -62,6 +70,7 @@ public class ConfigScreen {
                                                 val -> config.waterInfinite = val)
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
+                                //? <1.21.11 {
                                 .option(Option.createBuilder(boolean.class)
                                         .name(Component.translatable("cursed_craft.config.option.waterNether"))
                                         .description(OptionDescription.createBuilder()
@@ -70,10 +79,13 @@ public class ConfigScreen {
                                                         .build()
                                         )
                                         .binding(false,
-                                                () -> config.waterInfinite,
-                                                val -> config.waterInfinite = val)
+                                                () -> config.waterInNether,
+                                                val -> config.waterInNether = val)
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
+                                //?} else {
+                                /*.option(LabelOption.create(Component.translatable("cursed_craft.config.label.waternetherDisabled")))
+                                *///?}
                                 .build())
                         .group(OptionGroup.createBuilder()
                                 .name(Component.translatable("cursed_craft.config.group.lava"))
@@ -180,18 +192,22 @@ public class ConfigScreen {
                                         val -> config.instantCreepers = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+                        //? <1.21.11 {
                         .option(Option.createBuilder(boolean.class)
                                 .name(Component.translatable("cursed_craft.config.option.oneTapZombies"))
                                 .description(OptionDescription.createBuilder()
-                                        .text(Component.translatable("cursed_craft.config.option.oneTapZombies.description"))
+                                                .text(Component.translatable("cursed_craft.config.option.oneTapZombies.description"))
 //                                        .webpImage(imageSample("instant_creeper_demo.webp"))
-                                        .build()
+                                                .build()
                                 )
                                 .binding(false,
                                         () -> config.oneTapZombies,
                                         val -> config.oneTapZombies = val)
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+                        //?} else {
+                        /*.option(LabelOption.create(Component.translatable("cursed_craft.config.label.zombieDisabled")))
+                         *///?}
                         .build())
                 .save(() -> Config.HANDLER.save())
                 .build()

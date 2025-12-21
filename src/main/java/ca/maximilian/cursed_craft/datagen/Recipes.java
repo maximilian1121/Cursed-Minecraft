@@ -3,12 +3,15 @@ package ca.maximilian.cursed_craft.datagen;
 import ca.maximilian.cursed_craft.item.ModItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 
-
+//? >=1.21.11 {
+/*import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+*///?} else {
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+//?}
 
 //? >=1.20.4 {
 import net.minecraft.data.recipes.RecipeOutput;

@@ -8,21 +8,30 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.LavaFluid;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import static net.minecraft.world.level.material.FlowingFluid.FALLING;
 
 @Mixin(LavaFluid.class)
-public class LavaFast {
+public abstract class LavaFast {
+    @Shadow
+    public abstract int getTickDelay(LevelReader levelReader);
+
     /**
      * @author max
      * @reason lessen the tick delay.
      */
-    @Overwrite
-    public int getTickDelay(LevelReader level) {
+    @Inject(
+            method = "getTickDelay",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private void fastLava(LevelReader level, CallbackInfoReturnable<Integer> cir) {
         if (Config.HANDLER.instance().lavaFast) {
-            return 0;
-        } else {
-            return level.dimensionType().ultraWarm() ? 10 : 30;
+            cir.setReturnValue(0);
         }
     }
 
