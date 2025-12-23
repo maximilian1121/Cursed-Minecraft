@@ -1,4 +1,4 @@
 # New features
- - Fixed config mix-up
- - Added 1.21.11 proper support
- - Added nether water config
+ - New gallery gifs/webp animations
+ - Fixed the bug where if the nether water feature was off, water would evaporate everywhere
+ - Fixed op zombies to actually work... Crazy right?!?!?!

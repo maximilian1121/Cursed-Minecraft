@@ -2,7 +2,7 @@ plugins {
     id("fabric-loom")
 
     // `maven-publish`
-    id("me.modmuss50.mod-publish-plugin") version "1.1.0"
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 version = "${property("mod.version")}+${stonecutter.current.version}"
@@ -128,52 +128,19 @@ tasks {
     }
 }
 
-// Publishes builds to Modrinth and Curseforge with changelog from the CHANGELOG.md file
-publishMods {
-    file = tasks.remapJar.map { it.archiveFile.get() }
-    additionalFiles.from(tasks.remapSourcesJar.map { it.archiveFile.get() })
-    displayName = "${property("mod.name")} ${property("mod.version")} for ${property("mod.mc_title")}"
-    version = property("mod.version") as String
-    changelog = rootProject.file("CHANGELOG.md").readText()
-    type = STABLE
-    modLoaders.add("fabric")
-
-    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
-
-    modrinth {
-        projectId = property("publish.modrinth") as String
-        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        minecraftVersions.addAll(property("mod.mc_targets").toString().split(' '))
-        requires {
-            slug = "fabric-api"
-            slug = "yacl"
-            slug = "modmenu"
-        }
+modrinth {
+    token.set(System.getenv("MODRINTH_TOKEN"))
+    projectId.set("2nyjaLUy")
+    versionNumber.set(property("mod.version") as String)
+    versionType.set("release")
+    versionName.set("${property("mod.name")} ${property("mod.version")} for ${property("mod.mc_title")}")
+    changelog.set(rootProject.file("CHANGELOG.md").readText())
+    uploadFile.set(tasks.remapJar)
+    gameVersions.addAll(property("mod.mc_targets").toString().split(' '))
+    loaders.add("fabric")
+    dependencies {
+        required.project("P7dR8mSH")
+        required.project("1eAoo2KR")
+        required.project("mOgUt4GM")
     }
 }
-/*
-// Publishes builds to a maven repository under `com.example:template:0.1.0+mc`
-publishing {
-    repositories {
-        maven("https://maven.example.com/releases") {
-            name = "myMaven"
-            // To authenticate, create `myMavenUsername` and `myMavenPassword` properties in your Gradle home properties.
-            // See https://stonecutter.kikugie.dev/wiki/tips/properties#defining-properties
-            credentials(PasswordCredentials::class.java)
-            authentication {
-                create<BasicAuthentication>("basic")
-            }
-        }
-    }
-
-    publications {
-        create<MavenPublication>("mavenJava") {
-            groupId = "${property("mod.group")}.${property("mod.id")}"
-            artifactId = property("mod.id") as String
-            version = project.version
-
-            from(components["java"])
-        }
-    }
-}
- */

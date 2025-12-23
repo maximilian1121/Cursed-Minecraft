@@ -50,7 +50,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.waterFast"))
                                         .description(OptionDescription.createBuilder()
                                                         .text(Component.translatable("cursed_craft.config.option.waterFast.description"))
-//                                                .webpImage(imageSample("fast_lava_preview.webp"))
+                                                        .webpImage(imageSample("fast-water.webp"))
                                                         .build()
                                         )
                                         .binding(false,
@@ -62,7 +62,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.waterInfinite"))
                                         .description(OptionDescription.createBuilder()
                                                         .text(Component.translatable("cursed_craft.config.option.waterInfinite.description"))
-//                                                .webpImage(imageSample("fast_lava_preview.webp"))
+                                                        .webpImage(imageSample("inf-water.webp"))
                                                         .build()
                                         )
                                         .binding(false,
@@ -75,7 +75,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.waterNether"))
                                         .description(OptionDescription.createBuilder()
                                                         .text(Component.translatable("cursed_craft.config.option.waterNether.description"))
-//                                                .webpImage(imageSample("fast_lava_preview.webp"))
+//                                                .webpImage(imageSample("fast-lava.webp"))
                                                         .build()
                                         )
                                         .binding(false,
@@ -96,7 +96,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.lavaFast"))
                                         .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.lavaFast.description"))
-                                                .webpImage(imageSample("fast_lava_preview.webp"))
+                                                .webpImage(imageSample("fast-lava.webp"))
                                                 .build()
                                         )
                                         .binding(false,
@@ -108,7 +108,7 @@ public class ConfigScreen {
                                         .name(Component.translatable("cursed_craft.config.option.lavaInfinite"))
                                         .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.lavaInfinite.description"))
-                                                .webpImage(imageSample("inf_lava_preview.webp"))
+                                                .webpImage(imageSample("inf-lava.webp"))
                                                 .build()
                                         )
                                         .binding(false,
@@ -132,7 +132,7 @@ public class ConfigScreen {
                                 .name(Component.translatable("cursed_craft.config.option.pistonInfinite"))
                                 .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.pistonInfinite.description"))
-//                                        .webpImage(imageSample("inf_lava_preview.webp"))
+                                                .webpImage(imageSample("inf-piston.webp"))
                                                 .build()
                                 )
                                 .binding(false,
@@ -169,7 +169,7 @@ public class ConfigScreen {
                                 .name(Component.translatable("cursed_craft.config.option.rapidSkeletons"))
                                 .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.rapidSkeletons.description"))
-//                                        .webpImage(imageSample("inf_lava_preview.webp"))
+                                                .webpImage(imageSample("rapid-skeleton.webp"))
                                                 .build()
                                 )
                                 .binding(false,
@@ -184,7 +184,7 @@ public class ConfigScreen {
                                 .name(Component.translatable("cursed_craft.config.option.instantCreeper"))
                                 .description(OptionDescription.createBuilder()
                                         .text(Component.translatable("cursed_craft.config.option.instantCreeper.description"))
-                                        .webpImage(imageSample("instant_creeper_demo.webp"))
+                                        .webpImage(imageSample("insta-creeper.webp"))
                                         .build()
                                 )
                                 .binding(false,
@@ -197,7 +197,7 @@ public class ConfigScreen {
                                 .name(Component.translatable("cursed_craft.config.option.oneTapZombies"))
                                 .description(OptionDescription.createBuilder()
                                                 .text(Component.translatable("cursed_craft.config.option.oneTapZombies.description"))
-//                                        .webpImage(imageSample("instant_creeper_demo.webp"))
+//                                              .webpImage(imageSample("insta-creeper.webp"))
                                                 .build()
                                 )
                                 .binding(false,

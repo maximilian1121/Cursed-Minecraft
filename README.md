@@ -23,14 +23,10 @@ Please contribute a curse to this mod if you really so wish to see the codebase!
 
 ## Gallery
 
-Fast Lava Mod:
-
-![fast_lava_preview.webp](src/main/resources/assets/cursed_craft/textures/images/fast_lava_preview.webp)
-
-Infinite Lava Mod:
-
-![inf_lava_preview.webp](src/main/resources/assets/cursed_craft/textures/images/inf_lava_preview.webp)
-
-Instant Creeper Mod:
-
-![instant_creeper_demo.webp](src/main/resources/assets/cursed_craft/textures/images/instant_creeper_demo.webp)
+![fast-lava.webp](src/main/resources/assets/cursed_craft/textures/images/fast-lava.webp)
+![fast-water.webp](src/main/resources/assets/cursed_craft/textures/images/fast-water.webp)
+![inf-lava.webp](src/main/resources/assets/cursed_craft/textures/images/inf-lava.webp)
+![inf-piston.webp](src/main/resources/assets/cursed_craft/textures/images/inf-piston.webp)
+![inf-water.webp](src/main/resources/assets/cursed_craft/textures/images/inf-water.webp)
+![insta-creeper.webp](src/main/resources/assets/cursed_craft/textures/images/insta-creeper.webp)
+![rapid-skeleton.webp](src/main/resources/assets/cursed_craft/textures/images/rapid-skeleton.webp)
